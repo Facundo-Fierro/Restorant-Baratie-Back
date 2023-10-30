@@ -4,11 +4,11 @@ import { createOrder, deleteOrder, getOrder, getOrders, updateOrder } from "../c
 
 const router = Router()
 
-router.get('/order',authRequired,getOrders)
+router.get('/orders',authRequired,getOrders)
 router.get('/order/:id',authRequired,getOrder)
 router.post('/order',authRequired,createOrder)
-router.put('/order:id',authRequired,updateOrder)
-router.delete('/order',authRequired,deleteOrder)
+router.put('/order/:id',authRequired,updateOrder)
+router.delete('/order/:id',authRequired,deleteOrder)
 
 
 

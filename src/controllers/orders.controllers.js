@@ -25,11 +25,14 @@ export const getOrder = async(req,res) =>{
 //Crear un pedido
 export const createOrder = async(req,res) =>{
     try {
-        const {dish,details} = (req.body)
+        const {Dishes,details,ubication,paymentMethod,Total} = (req.body)
         const newOrder = new Order({
         User:req.user.id,
-        dish,
+        Dishes,
         details,
+        ubication,
+        paymentMethod,
+        Total
         })
         const savedOrder = await newOrder.save()
    res.json(savedOrder)

@@ -7,19 +7,27 @@ const orderSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    dish: {
-      type: String,
-      required: true,
-    },
+    Dishes: { type: [Object],required: true, },
     details: {
       type: String,
       default: "",
     },
+    ubication: {
+      type: String,
+      required: true,
+    },
+    paymentMethod: {
+      type: String,
+      enum: ["Efectivo", "Tarjeta"],
+     
+    },
+    Total:{type:Number,required:true},
     status: {
       type: String,
-      enum: ["Done", "In Progress"],
-      default: "In Progress",
+      enum: ["Entregado", "En Progreso..."],
+      default: "En Progreso...",
     },
+
   },
   {
     timestamps: true,

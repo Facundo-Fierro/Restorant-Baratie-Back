@@ -9,17 +9,30 @@ export const getMenu = async(req,res) =>{
         return res.status(500).json({message:error})
     }
 }
+//Obtener un solo plato
+export const getDish = async(req,res) =>{
+    try {
+        const dish = await menu.findById(req.params.id)
+        if(!dish) return res.status(404).json({message:'Can not find the specified task'})
+        res.json(dish)
+    } catch (error) {
+        return res.status(500).json({message:error}) 
+    }
+}
+
 //Crear un plato para el menu
 export const createDish = async(req,res) =>{
     try {
         
   
-    const {meal,categorie,description,price} = req.body
+    const {meal,available,categorie,description,price,image} = req.body
   const newDish =   new menu ({
         meal,
+        available,
         categorie,
         description,
         price,
+        image
     })
    const savedDish = await newDish.save()
    res.json(savedDish)

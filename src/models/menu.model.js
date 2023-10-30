@@ -5,9 +5,9 @@ const menuSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    status:{
+    available:{
         type:String,
-        enum: ['available', 'unavailable'],default:'available'
+        enum: ['Disponible', 'No disponible']
     },
     categorie:{
         type:String,
@@ -19,6 +19,10 @@ const menuSchema = new mongoose.Schema({
     },
     price:{
         type:Number,required:true
+    },
+    image:{
+        type:String,
+        required:true
     }
 })
 
