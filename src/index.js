@@ -2,5 +2,5 @@ import app from './app.js'
 import {connectDB } from './db.js'
 
 connectDB()
-app.listen(process.env.PORT)
-console.log('server on port',process.env.PORT)
+app.listen('https://restorant-baratie-back-noy9.vercel.app')
+console.log('server listening')
