@@ -45,7 +45,7 @@ export const login = async (req, res) => {
       return res.status(400).json({ message: "incorrect password" });
 
     const token = await createToken({ id: userFound._id });
-    res.cookie("token", token,{sameSite:"none"});
+    res.cookie("token", token,{sameSite:"none",secure:true});
     userFound.state = "online";
     await userFound.save();
 
