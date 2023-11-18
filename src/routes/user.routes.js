@@ -10,7 +10,7 @@ router.post('/login',login)
 router.post('/logout',logout)
 router.get('/verify',verifyToken)
 
-router.get('/users',authRequired,getUsers)
+router.get('/users',getUsers)
 router.get('/user/:id',authRequired,getUser)
 router.post('/user',authRequired,createUser)
 router.delete('/user/:id',authRequired,deleteUser)
