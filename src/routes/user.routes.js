@@ -12,7 +12,7 @@ router.get('/verify',verifyToken)
 
 router.get('/users',authRequired,getUsers)
 router.get('/user/:id',authRequired,getUser)
-router.post('/user',authRequired,createUser)
+router.post('/user',createUser)
 router.delete('/user/:id',authRequired,deleteUser)
 router.put('/user/:id',authRequired,updateUser)
 
